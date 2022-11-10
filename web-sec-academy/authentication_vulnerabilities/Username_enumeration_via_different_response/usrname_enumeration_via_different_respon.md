@@ -3,6 +3,7 @@
 1. Lab cung cấp cho chúng ta list username và password
 2. Khi tôi cố gắng login với một tài khoản bất kỳ thì nhận được messages là ``Invalid username`` , ta có thể lợi dụng điều này để điều tra ra username  hợp lệ thông qua username list.
 3. Trong Burp Suite, ta sẽ chuyển request post/login tới tab intruder  có dòng ``username=test&password=test``, tiến hành attack với payload username được cung cấp
+
  ![Img1](\assets/../img/post_login.png)
 4. Sau khi chạy, ta phát hiện payload = ``athena`` có độ dài khác với những payload còn lại và thấy trong response của nó có dòng ``Incorrect password``  -> Username found: ``athena``
  ![Img2](\assets/../img/after_run.png)
