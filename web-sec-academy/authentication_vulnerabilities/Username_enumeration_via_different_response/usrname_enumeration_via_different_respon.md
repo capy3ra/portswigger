@@ -8,7 +8,10 @@
 
 3. Trong Burp Suite, ta sẽ chuyển request post/login tới tab intruder  có dòng ``username=test&password=test``, tiến hành attack với payload username được cung cấp
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7b7198b9c53321043588bf3024a549413c96af0d
  ![Img1](\assets/../img/post_login.png)
 
 4. Sau khi chạy, ta phát hiện payload = ``athena`` có độ dài khác với những payload còn lại và thấy trong response của nó có dòng ``Incorrect password``  -> Username found: ``athena``
