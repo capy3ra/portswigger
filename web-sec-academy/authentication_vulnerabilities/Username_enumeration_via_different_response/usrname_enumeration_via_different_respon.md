@@ -10,7 +10,7 @@
 
  ![Img1](\assets/../img/post_login.png)
 
-1. Sau khi chạy, ta phát hiện payload = ``athena`` có độ dài khác với những payload còn lại và thấy trong response của nó có dòng ``Incorrect password``  -> Username found: ``athena``
+4. Sau khi chạy, ta phát hiện payload = ``athena`` có độ dài khác với những payload còn lại và thấy trong response của nó có dòng ``Incorrect password``  -> Username found: ``athena``
 
 
  ![Img2](\assets/../img/after_run.png)
