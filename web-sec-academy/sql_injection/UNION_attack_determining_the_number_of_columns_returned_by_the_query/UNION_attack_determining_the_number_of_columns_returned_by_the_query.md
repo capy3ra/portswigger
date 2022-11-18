@@ -4,7 +4,7 @@
 
 ![Img1](\assets/../img/gifts.png)
 
-2. Ta sẽ sử dụng lần lượt các câu truy vấn UNION + SELECT giá trị NULL của từng cột tăng dần
+2. Ta sẽ sử dụng lần lượt các câu truy vấn UNION SELECT gắn giá trị ``null`` (Phù hợp với mọi kiểu dữ liệu)  cho từng cột
     ```' UNION SELECT NULL--```
 
 ![Img2](\assets/../img/error.png)
