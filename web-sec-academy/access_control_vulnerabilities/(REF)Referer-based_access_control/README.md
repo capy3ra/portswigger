@@ -1,4 +1,4 @@
-## Referer-based access control
+## Referer-based access control (REFER)
 
 1. Đăng nhập vào tài khoản ``administrator``, thử chức năng nâng quyền user
  
