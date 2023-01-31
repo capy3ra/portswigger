@@ -130,6 +130,7 @@
 <textarea>
 <tfoot>
 <th>
+<text>
 <thead>
 <time>
 <title>
