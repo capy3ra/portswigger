@@ -8,6 +8,6 @@
 - Payload: ```window.postMessage('<img src=1 onerror=print()>');```
 -> Nhận thấy popup print hiện ra
 
-3. Craft trang exploit bằng thẻ iframe. Để khi load iframe, hàm postMessage() sẽ gửi một web message đến lab. (Tham số thứ 2 của hàm postMessage() nhằm cho phép tất cả các origin)
+3. Craft trang exploit bằng thẻ iframe. Để khi load iframe, hàm postMessage() sẽ gửi một web message đến lab. Do lab không verify orignin nên ta có thể thêm tham số thứ 2 cho hàm postMessage() = * nhằm cho phép tất cả các origin
 
 ![Img2](\asset/../img/craft_exploit_page.png)
