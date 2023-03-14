@@ -12,6 +12,6 @@
 
 4. Nhận thấy với `Host = 192.168.0.95` response sẽ redirect tới trang `/admin`.
 
-5. Craft request 
+5. Craft request để submit form xóa user carlos, tuy nhiên khi gửi thì server báo csrf với session không match với nhau. -> thêm cookie session vào.
 
 ![Img3](\asset/../img/done.png)
