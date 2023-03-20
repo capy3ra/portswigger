@@ -2,7 +2,7 @@
 
 1. Theo đề bài, lab hỗ trợ param `jwk` để verify token. Đăng nhập với thông tin được cung cấp.
 
-2. Trong header biết được jwt sử dụng thuật toán mã hóa RS256 = RSA + SHA-256. Generate một rsa key mới trong `jwt editor keys` 
+2. Trong header biết được jwt sử dụng thuật toán mã hóa RS256 = RSA + SHA-256. Ta sẽ tự tạo ra bộ public key và private key, sau đó gửi public lên. Vì trên server chỉ kiểm tra nếu có public key server sẽ sử dụng để tiến hành verify. Generate một rsa key mới trong `jwt editor keys` 
 
 ![image](https://user-images.githubusercontent.com/80744099/226249953-539a99ce-49dc-498c-ac3e-7e5e3bdda383.png)
 
