@@ -28,4 +28,10 @@ HOST: ...
 
 ![image](https://user-images.githubusercontent.com/80744099/229980359-a79238e2-c58c-448d-a969-007415b5874c.png)
 
-6. Giờ chúng ta tạo một 
+6. Giờ chúng ta tạo một POST / request với truy vấn search rồi đợi victim truy cập vào host khi đó request của victim sẽ được reflect lên lịch sử search của attacker.
+
+![image](https://user-images.githubusercontent.com/80744099/229982992-b1c50ac9-ca61-4ad2-954a-d25fa8bd4098.png)
+
+7. Nhận được request từ victim có chứa session cookie -> Thay đổi giá trị cookie hiện tại thành của victim rồi để truy cập tài khoản carlos
+
+![image](https://user-images.githubusercontent.com/80744099/229982753-8593f833-6c91-4bcf-be25-c37a97389366.png)
