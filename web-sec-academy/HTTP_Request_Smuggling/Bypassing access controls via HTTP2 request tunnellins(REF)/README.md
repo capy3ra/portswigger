@@ -41,7 +41,7 @@ X-SSL-CLIENT-CN: null
 X-FRONTEND-KEY: 9084482102113161
 ```
 
-4. Chuyển sang method HEAD và thêm các giá trị thích hợp cho authentication header vào smuggling request
+4. Chuyển sang method HEAD và thêm các giá trị thích hợp cho authentication header vào smuggling request (HEAD method chỉ trả lại các header mà không có phần body)
 
 ![image](https://user-images.githubusercontent.com/80744099/230791645-fbb13c25-b4dd-47ee-ad82-7d70adc3aa92.png)
 
