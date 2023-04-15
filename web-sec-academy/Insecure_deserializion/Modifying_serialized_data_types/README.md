@@ -10,6 +10,6 @@
 
 3. Chúng ta sẽ sửa serialized object của ban đầu thành 
 
-![[Img2](\asset/../img/encode.png)
+![Img2](\asset/../img/encode.png)
 
 4. Nhận thấy button admin panel. Click vào để xóa user carlos
