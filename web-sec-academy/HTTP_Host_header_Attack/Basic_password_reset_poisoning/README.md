@@ -8,7 +8,7 @@
 
 3. Được biết user `carlos` sẽ click vào mọi đường link trong email dó đó ta sẽ tiến hành craft trang exploit server để bắt được log khi `carlos` click vào đường link đổi mật khẩu.
 
-![Img2](\asset/../img/craft_exploit_page.png)
+![Img2](\asset/../img/craft_exploit_server.png)
 
 4. Gửi POST request forgot password với giá trị host trỏ tới trang exploit server và `username=carlos`
 
