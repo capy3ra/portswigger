@@ -1,4 +1,4 @@
-![image](https://github.com/capy3ra/portswigger/assets/80744099/7ee56892-66bb-406d-a36f-406513ab4662)## API tesing
+![image](https://github.com/capy3ra/portswigger/assets/80744099/0b29ee79-9b4b-4f85-ae3b-f97a269e785c)![image](https://github.com/capy3ra/portswigger/assets/80744099/7ee56892-66bb-406d-a36f-406513ab4662)## API tesing
 
 1. Exploiting a mass assignment vulnerability
 - Thử tính năng như một user bt (đăng nhập -> chọn sản phẩm -> thêm vào giỏ hàng -> thanh toán)
@@ -32,4 +32,31 @@
 - Tạo request quên mk với token vừa lấy được
 - Thay đổi password -> Xóa user carlos
 
-3. 
+3. Exploiting server-side parameter pollution in a REST URL
+- Trong chức năng quên mật khẩu khi nhập username nó trả về file json khá đáng nghi với những xử lý API
+![image](https://github.com/capy3ra/portswigger/assets/80744099/4f6179cd-1ed4-4c02-a0d0-c307d056690c)
+
+- Khi thử fuzz với `&` đã encode nhận thấy nó được giải mã luôn và thêm vào username
+![image](https://github.com/capy3ra/portswigger/assets/80744099/56dacb97-f3ec-4a37-98e9-78aba8d7f6cf)
+
+- Còn khi fuzz với `#` đã encode nhận thấy có vẻ nó đã truncate 1 đoạn và hiện lên thông báo lỗi `invalid route`.
+- Khi thử với `administrator/../admin` nhận thấy chỉ nhận octet cuối.
+![image](https://github.com/capy3ra/portswigger/assets/80744099/99d5f36f-c239-46da-8aba-f1ef5b2a93b3)
+
+- Thử tiếp với các đoạn path traversal mới. Nhận được thông báo URL not found.
+![image](https://github.com/capy3ra/portswigger/assets/80744099/262c86e1-11ad-4193-ae57-0fd2217a716f)
+
+- Có thể đoán là api này lưu theo kiểu thư mục. `cd ..` hơi quá nên không quá thư mục có sẵn. Còn những đoạn trước lỗi vì nó không trỏ được vào file nào.
+- Với gợi ý là các api definition. Thử đoạn file openapi.json (sử dụng đồng thời # để truncation đoạn sau)
+![image](https://github.com/capy3ra/portswigger/assets/80744099/e71963a0-7590-4a09-93ad-41f31b2e1c68)
+
+- Ở đây có hướng dẫn đoạn API search trường theo user:
+`/api/internal/v1/users/{username}/field/{field}`
+- Ở đây ta biết có một field là email.
+- Đọc file forgotPassword.js biết được có một field là `passwordResetToken`
+![image](https://github.com/capy3ra/portswigger/assets/80744099/22567648-52b9-49f4-ae97-527d05ffa585)
+
+- Đây chính là giá trị của param reset-token.
+![image](https://github.com/capy3ra/portswigger/assets/80744099/d5443e51-6cb5-437f-afcf-8e51bbb6150d)
+
+- Truy cập vào endpoint đó để đổi password
